@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
 import 'View/get_location.dart';
 import 'View/home.dart';
 import 'View/qr_scan.dart';

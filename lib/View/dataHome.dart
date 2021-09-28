@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:via_rider/Controller/map-api.dart';
 
 class DataHome extends StatefulWidget {
   const DataHome({Key? key}) : super(key: key);
@@ -130,18 +131,25 @@ class _DataHomeState extends State<DataHome> {
                             ),
                           ],
                         ),
+                        IconButton(
+                          onPressed: () =>
+                              MapUtils.openMap(-3.823216, -38.481700),
+                          icon: Icon(Icons.my_location),
+                        ),
                         Column(
                           children: [
                             FlatButton.icon(
-                              color:isDelivered==false ? Color(0xFFFF8800):Color(0xFF2EAE42),
+                              color: isDelivered == false
+                                  ? Color(0xFFFF8800)
+                                  : Color(0xFF2EAE42),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(15),
                               ),
                               onPressed: () {
                                 setState(() {
-                                  if(isDelivered == false){
-                                    isDelivered= true;
-                                  }else {
+                                  if (isDelivered == false) {
+                                    isDelivered = true;
+                                  } else {
                                     isDelivered = false;
                                   }
                                 });
@@ -165,7 +173,7 @@ class _DataHomeState extends State<DataHome> {
                               style: TextStyle(
                                   fontWeight: FontWeight.w700,
                                   color: Colors.grey[700],
-                                  fontSize: 14),
+                                  fontSize: 11),
                             ),
                           ],
                         )
